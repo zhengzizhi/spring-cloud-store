@@ -33,4 +33,4 @@ spring:
     port: ${SPRING_NEO4J_PORT:7474}
 eureka:
   client:
-enabled: false
+    enabled: false
