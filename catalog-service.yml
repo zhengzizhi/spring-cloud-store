@@ -54,4 +54,4 @@ spring:
   jpa:
     database: H2
   datasource:
-initialize: false
+    initialize: false
