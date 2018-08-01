@@ -64,4 +64,4 @@ security:
       userInfoUri: http://localhost:8181/uaa/user
     client:
       client-id: acme
-access-token-uri: http://localhost:8787
+      access-token-uri: http://localhost:8787
