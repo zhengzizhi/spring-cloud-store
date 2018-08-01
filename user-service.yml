@@ -3,7 +3,8 @@ spring:
     active: development
 ---
 server:
-  contextPath: /uaa
+  servlet:
+    context-path: /uaa
 security:
   user:
     password: password
@@ -14,7 +15,8 @@ security.ignored: /resources/**
 ---
 server:
   port: 8181
-  contextPath: /uaa
+  servlet:
+    context-path: /uaa
 security:
   user:
     password: password
@@ -31,7 +33,8 @@ security.ignored: /resources/**
 ---
 server:
   port: 8181
-  contextPath: /uaa
+  servlet:
+    context-path: /uaa
 security:
   user:
     password: password
