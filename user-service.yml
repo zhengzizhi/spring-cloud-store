@@ -5,48 +5,46 @@ spring:
 server:
   servlet:
     context-path: /uaa
-security:
-  user:
-    password: password
-  enable-csrf: false
 spring:
-  profiles: cloud
-security.ignored: /resources/**
+  profiles: cloud    
+  security:
+    user:
+      password: password 
 ---
 server:
   port: 8181
   servlet:
-    context-path: /uaa
-security:
-  user:
-    password: password
-  enable-csrf: false
-logging.level.org.springframework.security: DEBUG
+    context-path: /uaa   
 spring:
   profiles: development
+  security:
+    user:
+      password: password
   datasource:
     url: jdbc:mysql://192.168.99.100:3306/dev
     username: root
     password: dbpass
-    initialize: true
-security.ignored: /resources/**
+    initialization-mode: ALWAYS
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG 
 ---
 server:
   port: 8181
   servlet:
     context-path: /uaa
-security:
-  user:
-    password: password
-  enable-csrf: false
 spring:
   profiles: docker
+  security:
+    user:
+      password: password
   datasource:
     url: jdbc:mysql://mysql:3306/dev
     username: root
     password: dbpass
-    initialize: true
-security.ignored: /resources/**
+    initialization-mode: ALWAYS
 eureka:
   instance:
     prefer-ip-address: true
