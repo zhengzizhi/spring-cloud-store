@@ -21,7 +21,7 @@ spring:
     user:
       password: password
   datasource:
-    url: jdbc:mysql://192.168.99.100:3306/dev
+    url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialization-mode: EMBEDDED
@@ -41,7 +41,7 @@ spring:
     user:
       password: password
   datasource:
-    url: jdbc:mysql://mysql:3306/dev
+    url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialization-mode: EMBEDDED
