@@ -17,7 +17,7 @@ spring:
     url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialize: false
+    initialization-mode: ALWAYS
 eureka:
   instance:
     prefer-ip-address: true
@@ -36,7 +36,7 @@ spring:
     url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialize: true
+    initialization-mode: ALWAYS
 eureka:
   instance:
     prefer-ip-address: true
@@ -54,4 +54,4 @@ spring:
   jpa:
     database: H2
   datasource:
-    initialize: false
+    initialization-mode: ALWAYS
