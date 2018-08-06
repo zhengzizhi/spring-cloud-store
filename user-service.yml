@@ -24,7 +24,7 @@ spring:
     url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialization-mode: EMBEDDED
+    initialization-mode: ALWAYS
 logging:
   level:
     org:
@@ -44,7 +44,7 @@ spring:
     url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialization-mode: EMBEDDED
+    initialization-mode: ALWAYS
 eureka:
   instance:
     prefer-ip-address: true
@@ -62,4 +62,4 @@ spring:
     database: H2
   datasource:
     url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
-    initialization-mode: NEVER
+    initialization-mode: ALWAYS
