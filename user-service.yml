@@ -21,12 +21,13 @@ spring:
     user:
       password: password
   datasource:
+    platform: mysql
     url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialization-mode: always
-    schema: schema.sql
-    data: data.sql
+    schema: schema-mysql.sql
+    data: data-myql.sql
     continue-on-error: true
 logging:
   level:
@@ -42,12 +43,13 @@ spring:
     user:
       password: password
   datasource:
-    url: jdbc:mysql://mysql:3306/dev?useSSL=false
+    platform: mysql
+    url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialization-mode: always
-    schema: schema.sql
-    data: data.sql
+    schema: schema-mysql.sql
+    data: data-myql.sql
     continue-on-error: true
 eureka:
   instance:
