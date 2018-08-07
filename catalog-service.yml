@@ -14,10 +14,14 @@ spring:
     host: 192.168.99.100
     port: 6379
   datasource:
+    platform: mysql
     url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialization-mode: ALWAYS
+    initialization-mode: always
+    schema: schema-mysql.sql
+    data: data-myql.sql
+    continue-on-error: true
 eureka:
   instance:
     prefer-ip-address: true
@@ -33,10 +37,14 @@ spring:
     host: redis
     port: 6379
   datasource:
-    url: jdbc:mysql://mysql:3306/dev?useSSL=false
+    platform: mysql
+    url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialization-mode: ALWAYS
+    initialization-mode: always
+    schema: schema-mysql.sql
+    data: data-myql.sql
+    continue-on-error: true
 eureka:
   instance:
     prefer-ip-address: true
