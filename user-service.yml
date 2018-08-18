@@ -24,11 +24,15 @@ spring:
     url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
+    schema-username: root
+    schema-password: dbpass
+    data-username: root
+    data-password: dbpass
     platform: mysql
     schema: classpath:schema.sql
     data: classpath:data.sql
     continue-on-error: true
-    initialization-mode: always
+    initialization-mode: always 
 logging:
   level:
     org.springframework.security: DEBUG 
@@ -46,17 +50,21 @@ spring:
     url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
+    schema-username: root
+    schema-password: dbpass
+    data-username: root
+    data-password: dbpass
     platform: mysql
     schema: classpath:schema.sql
     data: classpath:data.sql
     continue-on-error: true
-    initialization-mode: always
+    initialization-mode: always 
 eureka:
   instance:
     prefer-ip-address: true
     non-secure-port: 8181
   client:
-    registerWithEureka: true
+    register-with-eureka: true
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-service:8761/eureka/
