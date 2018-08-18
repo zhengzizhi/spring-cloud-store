@@ -7,21 +7,29 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
+      user-info-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
     client:
       client-id: acme
 ---
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://192.168.99.100:3306/dev
+    url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialization-mode: ALWAYS
+    schema-username: root
+    schema-password: dbpass
+    data-username: root
+    data-password: dbpass
+    platform: mysql
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+    continue-on-error: true
+    initialization-mode: always
 security:
   oauth2:
     resource:
-      userInfoUri: http://localhost:8181/uaa/user
+      user-info-uri: http://localhost:8181/uaa/user
     client:
       client-id: acme
       access-token-uri: http://localhost:8787
@@ -29,21 +37,29 @@ security:
 spring:
   profiles: docker
   datasource:
-    url: jdbc:mysql://mysql:3306/dev
+    url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialization-mode: ALWAYS
+    schema-username: root
+    schema-password: dbpass
+    data-username: root
+    data-password: dbpass
+    platform: mysql
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+    continue-on-error: true
+    initialization-mode: always
 security:
   oauth2:
     resource:
-      userInfoUri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/user
+      user-info-uri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/user
     client:
       client-id: acme
 eureka:
   instance:
     prefer-ip-address: true
   client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
       defaultZone: http://discovery-service:8761/eureka/
