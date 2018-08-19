@@ -14,16 +14,16 @@ zuul:
       url: ${vcap.services.edge-service.credentials.uri:http://localhost:9999}
     auth-service:
       path: /user/**
-      url: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
+      url: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/user
     user-service:
       path: /users/**
 security:
   oauth2:
     resource:
-      user-info-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
+      user-info-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/user
     client:
-      access-token-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/oauth/token
-      user-authorization-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/oauth/authorize
+      access-token-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/oauth/token
+      user-authorization-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/oauth/authorize
       client-id: acme
       client-secret: acmesecret
 ---
@@ -39,16 +39,16 @@ zuul:
       url: http://localhost:9999
     auth-service:
       path: /user/**
-      url: http://localhost:8181/uaa/user
+      url: http://localhost:8181/user
     user-service:
       path: /users/**
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8181/uaa/user
+      user-info-uri: http://localhost:8181/user
     client:
-      access-token-uri: http://localhost:8181/uaa/oauth/token
-      user-authorization-uri: http://localhost:8181/uaa/oauth/authorize
+      access-token-uri: http://localhost:8181/oauth/token
+      user-authorization-uri: http://localhost:8181/oauth/authorize
       client-id: acme
       client-secret: acmesecret
 eureka:
@@ -73,16 +73,16 @@ zuul:
       url: http://${DOCKER_IP:192.168.99.100}:9999
     auth-service:
       path: /user/**
-      url: http://${DOCKER_IP:192.168.99.100}:8181/uaa/user
+      url: http://${DOCKER_IP:192.168.99.100}:8181/user
     user-service:
       path: /users/**
 security:
   oauth2:
     resource:
-      user-info-uri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/user
+      user-info-uri: http://${DOCKER_IP:192.168.99.100}:8181/user
     client:
-      access-token-uri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/oauth/token
-      user-authorization-uri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/oauth/authorize
+      access-token-uri: http://${DOCKER_IP:192.168.99.100}:8181/oauth/token
+      user-authorization-uri: http://${DOCKER_IP:192.168.99.100}:8181/oauth/authorize
       client-id: acme
       client-secret: acmesecret
 eureka:
