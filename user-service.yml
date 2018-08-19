@@ -1,25 +1,11 @@
 spring:
   profiles:
-    active: development
----
-server:
-  servlet:
-    context-path: /uaa
-spring:
-  profiles: cloud    
-  security:
-    user:
-      password: password 
+    active: development   
 ---
 server:
   port: 8181
-  servlet:
-    context-path: /uaa   
 spring:
   profiles: development
-  security:
-    user:
-      password: password
   datasource:
     url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
@@ -39,13 +25,8 @@ logging:
 ---
 server:
   port: 8181
-  servlet:
-    context-path: /uaa
 spring:
   profiles: docker
-  security:
-    user:
-      password: password
   datasource:
     url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
@@ -65,6 +46,6 @@ eureka:
     non-secure-port: 8181
   client:
     register-with-eureka: true
-    fetchRegistry: true
-    serviceUrl:
+    fetch-registry: true
+    service-url:
       defaultZone: http://discovery-service:8761/eureka/
