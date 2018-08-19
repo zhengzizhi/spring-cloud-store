@@ -18,7 +18,7 @@ zuul:
 security:
   oauth2:
     resource:
-      user-info-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
+      user-info-uri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/user
 #hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 #ribbon:
 #  ConnectTimeout: 3000
@@ -42,7 +42,7 @@ zuul:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8181/uaa/user
+      user-info-uri: http://localhost:8181/user
 ---
 spring:
   profiles: docker
@@ -62,7 +62,7 @@ zuul:
 security:
   oauth2:
     resource:
-      user-info-uri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/user
+      user-info-uri: http://${DOCKER_IP:192.168.99.100}:8181/user
 eureka:
   instance:
     prefer-ip-address: true
