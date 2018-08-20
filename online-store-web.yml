@@ -10,7 +10,7 @@ zuul:
   ignored-services: '*'
   routes:
     edge-service:
-      path: /api/**
+      path: /**
       url: ${vcap.services.edge-service.credentials.uri:http://localhost:9999}
     auth-service:
       path: /user/**
@@ -35,7 +35,7 @@ zuul:
   ignored-services: '*'
   routes:
     edge-service:
-      path: /api/**
+      path: /**
       url: http://localhost:9999
     auth-service:
       path: /user/**
