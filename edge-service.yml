@@ -6,7 +6,6 @@ spring:
   profiles: cloud
 zuul:
   ignored-services: '*'
-  ignoredPatterns: /**/api/**
   routes:
     account-service: /account/**
     payment-service: /payment/**
@@ -30,7 +29,6 @@ spring:
     name: edge-service
 zuul:
   ignored-services: '*'
-  ignoredPatterns: /**/api/**
   routes:
     account-service: /account/**
     payment-service: /payment/**
@@ -50,7 +48,6 @@ spring:
     name: edge-service
 zuul:
   ignored-services: '*'
-  ignoredPatterns: /**/api/**
   routes:
     account-service: /account/**
     payment-service: /payment/**
