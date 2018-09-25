@@ -5,6 +5,9 @@ spring:
 server:
   port: 8181
 spring:
+  data:
+    rest:
+      base-path: /api
   profiles: development
   datasource:
     url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
@@ -26,6 +29,9 @@ logging:
 server:
   port: 8181
 spring:
+  data:
+    rest:
+      base-path: /api
   profiles: docker
   datasource:
     url: jdbc:mysql://mysql:3306/dev?useSSL=false
