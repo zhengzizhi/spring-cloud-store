@@ -3,6 +3,9 @@ spring:
     active: development
 ---
 spring:
+  data:
+    rest:
+      base-path: /api
   profiles: cloud
   datasource:
     platform: mysql
@@ -14,6 +17,9 @@ security:
       client-id: acme
 ---
 spring:
+  data:
+    rest:
+      base-path: /api
   profiles: development
   jpa:
     show-sql: false
@@ -40,6 +46,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 ---
 spring:
+  data:
+    rest:
+      base-path: /api
   profiles: docker
   jpa:
     show-sql: false
@@ -65,6 +74,9 @@ eureka:
       defaultZone: http://discovery-service:8761/eureka/
 ---
 spring:
+  data:
+    rest:
+      base-path: /api
   application:
     name: account-service
   profiles: test
