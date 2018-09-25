@@ -3,6 +3,8 @@ spring.profiles.active: development
 spring:
   profiles: cloud
   data:
+    rest:
+      base-path: /api
     mongodb:
       host: ${vcap.services.order-db.credentials.hostname:localhost}
       port: ${vcap.services.order-db.credentials.port:27017}
@@ -22,6 +24,8 @@ security:
 spring:
   profiles: development
   data:
+    rest:
+      base-path: /api
     mongodb:
       host: 192.168.99.100
       port: 27017
@@ -42,6 +46,8 @@ security:
 spring:
   profiles: docker
   data:
+    rest:
+      base-path: /api
     mongodb:
       host: mongo
       port: 27017
